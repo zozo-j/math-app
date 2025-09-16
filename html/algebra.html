@@ -1,0 +1,188 @@
+<!-- Algebra Learning Section -->
+<div id="algebraLearningSection" class="learning-section hidden">
+    <div class="learning-content">
+        <h2>🔢 Algebra Calculations</h2>
+        
+        <div class="algebra-exercise-type-selection">
+            <h3>Choose Algebra Type:</h3>
+            <div class="exercise-buttons">
+                <button class="algebra-exercise-type-btn" data-type="linear-equations">Linear Equations</button>
+                <button class="algebra-exercise-type-btn" data-type="quadratic-equations">Quadratic Equations</button>
+                <button class="algebra-exercise-type-btn" data-type="polynomial-operations">Polynomial Operations</button>
+                <button class="algebra-exercise-type-btn" data-type="systems-equations">Systems of Equations</button>
+            </div>
+        </div>
+
+        <!-- Algebra Learning Content (Initially Hidden) -->
+        <div id="algebraLearningContent" class="algebra-learning-content hidden">
+            <div id="linearEquationsLearning" class="operation-explanation hidden">
+                <h3>📐 Linear Equations</h3>
+                <p><strong>What are Linear Equations?</strong></p>
+                <p>Linear equations are equations where the highest power of any variable is 1. They form straight lines when graphed.</p>
+                
+                <div class="example-box">
+                    <h4>Solving Linear Equations: ax + b = c</h4>
+                    <div class="step-by-step">
+                        <p><strong>Example:</strong> Solve 3x + 5 = 14</p>
+                        <p><strong>Step 1:</strong> Subtract 5 from both sides: 3x + 5 - 5 = 14 - 5</p>
+                        <p><strong>Step 2:</strong> Simplify: 3x = 9</p>
+                        <p><strong>Step 3:</strong> Divide both sides by 3: x = 3</p>
+                        <p>🎯 <strong>Solution: x = 3</strong></p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Linear Equations with Variables on Both Sides</h4>
+                    <div class="step-by-step">
+                        <p><strong>Example:</strong> Solve 2x + 3 = x + 7</p>
+                        <p><strong>Step 1:</strong> Subtract x from both sides: 2x - x + 3 = x - x + 7</p>
+                        <p><strong>Step 2:</strong> Simplify: x + 3 = 7</p>
+                        <p><strong>Step 3:</strong> Subtract 3 from both sides: x = 4</p>
+                        <p>🎯 <strong>Solution: x = 4</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quadraticEquationsLearning" class="operation-explanation hidden">
+                <h3>⚡ Quadratic Equations</h3>
+                <p><strong>What are Quadratic Equations?</strong></p>
+                <p>Quadratic equations are equations where the highest power of the variable is 2. They form parabolas when graphed.</p>
+                
+                <div class="example-box">
+                    <h4>Quadratic Formula: x = (-b ± √(b² - 4ac)) / 2a</h4>
+                    <div class="step-by-step">
+                        <p><strong>Example:</strong> Solve x² - 5x + 6 = 0</p>
+                        <p><strong>Step 1:</strong> Identify a = 1, b = -5, c = 6</p>
+                        <p><strong>Step 2:</strong> Calculate discriminant: b² - 4ac = 25 - 24 = 1</p>
+                        <p><strong>Step 3:</strong> Apply formula: x = (5 ± √1) / 2 = (5 ± 1) / 2</p>
+                        <p><strong>Step 4:</strong> Solutions: x = 3 or x = 2</p>
+                        <p>🎯 <strong>Solutions: x = 2, x = 3</strong></p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Factoring Method</h4>
+                    <div class="step-by-step">
+                        <p><strong>Example:</strong> Solve x² - 7x + 12 = 0</p>
+                        <p><strong>Step 1:</strong> Find two numbers that multiply to 12 and add to -7</p>
+                        <p><strong>Step 2:</strong> Those numbers are -3 and -4</p>
+                        <p><strong>Step 3:</strong> Factor: (x - 3)(x - 4) = 0</p>
+                        <p><strong>Step 4:</strong> Solutions: x = 3 or x = 4</p>
+                        <p>🎯 <strong>Solutions: x = 3, x = 4</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="polynomialOperationsLearning" class="operation-explanation hidden">
+                <h3>🔄 Polynomial Operations</h3>
+                <p><strong>What are Polynomial Operations?</strong></p>
+                <p>Polynomials are expressions with multiple terms containing variables raised to different powers. We can add, subtract, multiply, and divide them.</p>
+                
+                <div class="example-box">
+                    <h4>Adding Polynomials</h4>
+                    <div class="step-by-step">
+                        <p><strong>Example:</strong> (3x² + 2x + 1) + (x² - x + 4)</p>
+                        <p><strong>Step 1:</strong> Group like terms</p>
+                        <p><strong>Step 2:</strong> (3x² + x²) + (2x - x) + (1 + 4)</p>
+                        <p><strong>Step 3:</strong> Simplify: 4x² + x + 5</p>
+                        <p>🎯 <strong>Result: 4x² + x + 5</strong></p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Multiplying Polynomials (FOIL Method)</h4>
+                    <div class="step-by-step">
+                        <p><strong>Example:</strong> (x + 3)(x + 2)</p>
+                        <p><strong>Step 1:</strong> First terms: x × x = x²</p>
+                        <p><strong>Step 2:</strong> Outer terms: x × 2 = 2x</p>
+                        <p><strong>Step 3:</strong> Inner terms: 3 × x = 3x</p>
+                        <p><strong>Step 4:</strong> Last terms: 3 × 2 = 6</p>
+                        <p><strong>Step 5:</strong> Combine: x² + 2x + 3x + 6 = x² + 5x + 6</p>
+                        <p>🎯 <strong>Result: x² + 5x + 6</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="systemsEquationsLearning" class="operation-explanation hidden">
+                <h3>⚖️ Systems of Equations</h3>
+                <p><strong>What are Systems of Equations?</strong></p>
+                <p>Systems of equations are sets of two or more equations that share the same variables. We solve for values that satisfy all equations simultaneously.</p>
+                
+                <div class="example-box">
+                    <h4>Substitution Method</h4>
+                    <div class="step-by-step">
+                        <p><strong>Example:</strong> x + y = 5 and x - y = 1</p>
+                        <p><strong>Step 1:</strong> From first equation: y = 5 - x</p>
+                        <p><strong>Step 2:</strong> Substitute into second: x - (5 - x) = 1</p>
+                        <p><strong>Step 3:</strong> Simplify: x - 5 + x = 1, so 2x = 6</p>
+                        <p><strong>Step 4:</strong> Solve: x = 3</p>
+                        <p><strong>Step 5:</strong> Find y: y = 5 - 3 = 2</p>
+                        <p>🎯 <strong>Solution: x = 3, y = 2</strong></p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Elimination Method</h4>
+                    <div class="step-by-step">
+                        <p><strong>Example:</strong> 2x + 3y = 7 and x - 3y = 2</p>
+                        <p><strong>Step 1:</strong> Add the equations to eliminate y</p>
+                        <p><strong>Step 2:</strong> (2x + 3y) + (x - 3y) = 7 + 2</p>
+                        <p><strong>Step 3:</strong> Simplify: 3x = 9, so x = 3</p>
+                        <p><strong>Step 4:</strong> Substitute back: 3 - 3y = 2, so y = 1/3</p>
+                        <p>🎯 <strong>Solution: x = 3, y = 1/3</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-actions">
+                <button id="startAlgebraExercisesBtn" class="start-exercises-btn">🎯 Start Algebra Exercises</button>
+                <button id="backToAlgebraSelectionBtn" class="back-learning-btn">🔢 Back to Selection</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Algebra Exercises Section -->
+<div id="algebraExercisesSection" class="exercises-section hidden">
+    <div class="exercises-header">
+        <h2>🔢 Algebra Exercises</h2>
+        <div class="score-display">
+            <span>Score: <span id="algebraScoreDisplay">0/0</span></span>
+            <span>Streak: <span id="algebraStreakDisplay">0</span> 🔥</span>
+        </div>
+    </div>
+
+    <!-- Exercise Type Selection -->
+    <div class="algebra-exercise-type-selection">
+        <h3>Choose Algebra Type:</h3>
+        <div class="exercise-buttons">
+            <button class="algebra-exercise-type-btn" data-type="linear-equations">Linear Equations</button>
+            <button class="algebra-exercise-type-btn" data-type="quadratic-equations">Quadratic Equations</button>
+            <button class="algebra-exercise-type-btn" data-type="polynomial-operations">Polynomial Operations</button>
+            <button class="algebra-exercise-type-btn" data-type="systems-equations">Systems of Equations</button>
+        </div>
+    </div>
+
+    <div id="algebraExerciseContent" class="exercise-content hidden">
+        <div class="exercise-problem">
+            <h3 id="algebraExerciseTitle">Algebra Exercise</h3>
+            <div id="algebraProblemDisplay" class="problem-display"></div>
+        </div>
+
+        <div class="exercise-input">
+            <label for="algebraExerciseAnswer">Your Answer:</label>
+            <input type="text" id="algebraExerciseAnswer" placeholder="Enter your answer (e.g., x = 3 or x = 2, y = 1)" step="0.01">
+            <button id="algebraCheckAnswerBtn" class="check-answer-btn">Check Answer</button>
+        </div>
+
+        <div id="algebraExerciseFeedback" class="exercise-feedback hidden">
+            <div id="algebraFeedbackMessage"></div>
+            <button id="algebraNextProblemBtn" class="next-problem-btn">Next Problem</button>
+        </div>
+
+        <div class="exercise-controls">
+            <button id="algebraNewExerciseTypeBtn" class="new-type-btn">Choose New Type</button>
+            <button id="algebraBackToLearningBtn" class="back-learning-btn">🔢 Back to Algebra Learning</button>
+        </div>
+    </div>
+</div>

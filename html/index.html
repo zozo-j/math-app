@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Wizard - Interactive Math Learning</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/algebra.css">
+    <link rel="stylesheet" href="../css/trigonometry.css">
+    <link rel="stylesheet" href="../css/knowledge-check.css">
+</head>
+<body>
+    <!-- Header Component -->
+    <header id="appHeader" class="app-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <h1 id="appTitle" class="app-title">Math Wizard</h1>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" id="aboutBtn" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" id="contactBtn" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="welcome-screen">
+            <header class="welcome-header">
+                <h1>�‍♂️ Welcome to Math Wizard</h1>
+                <p>Choose your difficulty level to start your mathematical journey</p>
+            </header>
+            
+            <div class="difficulty-selection">
+                    <div class="difficulty-card" data-difficulty="beginner">
+                        <div class="difficulty-icon">🌟</div>
+                        <h3>Beginner</h3>
+                        <p>Simple addition, subtraction & problem solving</p>
+                        <ul class="features">
+                            <li>Numbers 1-50</li>
+                            <li>Basic operations (+, -)</li>
+                            <li>Word problems & scenarios</li>
+                            <li>Step-by-step hints</li>
+                            <li>Interactive exercises</li>
+                        </ul>
+                    </div>
+                
+                <div class="difficulty-card" data-difficulty="intermediate">
+                    <div class="difficulty-icon">🚀</div>
+                    <h3>Intermediate</h3>
+                    <p>Multiplication, division, and more</p>
+                    <ul class="features">
+                        <li>Numbers 1-1000</li>
+                        <li>All basic operations (×, ÷)</li>
+                        <li>Percentage calculations</li>
+                        <li>Interactive exercises</li>
+                    </ul>
+                </div>
+                
+                <div class="difficulty-card" data-difficulty="advanced">
+                    <div class="difficulty-icon">⚡</div>
+                    <h3>Advanced</h3>
+                    <p>Powers, roots, and complex math</p>
+                    <ul class="features">
+                        <li>Any number range</li>
+                        <li>Powers & square roots</li>
+                        <li>Scientific calculations</li>
+                    </ul>
+                </div>
+                
+                <div class="difficulty-card" data-difficulty="geometric">
+                    <div class="difficulty-icon">📐</div>
+                    <h3>Geometric Calculations</h3>
+                    <p>Area, perimeter, and shapes</p>
+                    <ul class="features">
+                        <li>Rectangle & square areas</li>
+                        <li>Circle calculations</li>
+                        <li>Triangle properties</li>
+                        <li>Perimeter calculations</li>
+                    </ul>
+                </div>
+                
+                <div class="difficulty-card" data-difficulty="advanced-geometric">
+                    <div class="difficulty-icon">📦</div>
+                    <h3>Advanced Geometric (3D)</h3>
+                    <p>Volume, surface area, and 3D shapes</p>
+                    <ul class="features">
+                        <li>Cube & rectangular prism volumes</li>
+                        <li>Sphere calculations</li>
+                        <li>Cylinder & cone properties</li>
+                        <li>Surface area calculations</li>
+                    </ul>
+                </div>
+                
+                <div class="difficulty-card" data-difficulty="algebra">
+                    <div class="difficulty-icon">🔢</div>
+                    <h3>Algebra</h3>
+                    <p>Equations, polynomials, and algebraic thinking</p>
+                    <ul class="features">
+                        <li>Linear equations</li>
+                        <li>Quadratic equations</li>
+                        <li>Polynomial operations</li>
+                        <li>Systems of equations</li>
+                    </ul>
+                </div>
+                
+                <div class="difficulty-card" data-difficulty="trigonometry">
+                    <div class="difficulty-icon">📊</div>
+                    <h3>Trigonometry</h3>
+                    <p>Angles, triangles, and trigonometric functions</p>
+                    <ul class="features">
+                        <li>Basic trigonometry (SOH-CAH-TOA)</li>
+                        <li>Inverse trigonometric functions</li>
+                        <li>Trigonometric identities</li>
+                        <li>Triangle solving</li>
+                    </ul>
+                </div>
+                
+                <div class="difficulty-card" data-difficulty="knowledge-check">
+                    <div class="difficulty-icon">🧠</div>
+                    <h3>Knowledge Check</h3>
+                    <p>Test your understanding of math concepts</p>
+                    <ul class="features">
+                        <li>Math terminology quizzes</li>
+                        <li>Fill-in-the-blank exercises</li>
+                        <li>Concept understanding tests</li>
+                        <li>Multiple choice questions</li>
+                    </ul>
+                </div>
+                
+                <div class="difficulty-card" data-difficulty="dictionary">
+                    <div class="difficulty-icon">📖</div>
+                    <h3>Math Dictionary</h3>
+                    <p>All mathematical terms and definitions</p>
+                    <ul class="features">
+                        <li>Basic math terminology</li>
+                        <li>Geometric definitions</li>
+                        <li>Algebraic expressions</li>
+                        <li>Trigonometric terms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Screen (Initially Hidden) -->
+        <div id="calculatorScreen" class="calculator-screen hidden">
+            <header class="calc-header">
+                <div class="header-content">
+                    <h1></h1>
+                    <div class="difficulty-badge">
+                        <span id="currentDifficulty">Beginner</span>
+                        <button id="changeDifficultyBtn" class="change-difficulty-btn">Change</button>
+                    </div>
+                </div>
+            </header>
+            
+            <main>
+                <!-- Learning Section (Only for Beginner) -->
+                <div id="learningSection" class="learning-section hidden">
+                    <div class="learning-content">
+                        <h2>📚 Learn Basic Math & Problem Solving</h2>
+                        
+                        <div class="operation-explanation">
+                            <h3>🔢 Addition (+)</h3>
+                            <p><strong>What is Addition?</strong></p>
+                            <p>Addition means combining two or more numbers together to get a total sum.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: 7 + 5 = ?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Step 1:</strong> Start with the first number: 7</p>
+                                    <p><strong>Step 2:</strong> Count forward 5 more: 8, 9, 10, 11, 12</p>
+                                    <p><strong>Step 3:</strong> The answer is 12!</p>
+                                    <p>🎯 <strong>7 + 5 = 12</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="operation-explanation">
+                            <h3>➖ Subtraction (-)</h3>
+                            <p><strong>What is Subtraction?</strong></p>
+                            <p>Subtraction means taking away one number from another to find the difference.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: 15 - 6 = ?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Step 1:</strong> Start with the first number: 15</p>
+                                    <p><strong>Step 2:</strong> Count backward 6 steps: 14, 13, 12, 11, 10, 9</p>
+                                    <p><strong>Step 3:</strong> The answer is 9!</p>
+                                    <p>🎯 <strong>15 - 6 = 9</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="operation-explanation">
+                            <h3>🧠 Problem Solving</h3>
+                            <p><strong>What is Mathematical Problem Solving?</strong></p>
+                            <p>Problem solving means reading a story or situation, understanding what math is needed, and finding the answer.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: Emma has 8 cookies. She eats 3 cookies. How many are left?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Step 1:</strong> Understand the story - Emma starts with 8 cookies</p>
+                                    <p><strong>Step 2:</strong> Identify the action - She eats (takes away) 3 cookies</p>
+                                    <p><strong>Step 3:</strong> Choose the operation - This is subtraction: 8 - 3</p>
+                                    <p><strong>Step 4:</strong> Solve - 8 - 3 = 5</p>
+                                    <p>🎯 <strong>Emma has 5 cookies left!</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="learning-actions">
+                            <button id="startExercisesBtn" class="start-exercises-btn">🎯 Start Exercises</button>
+                            <!-- <button id="goToCalculatorBtn" class="go-calculator-btn">🧮 Use Calculator</button> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate Learning Section -->
+                <div id="intermediateLearningSection" class="learning-section hidden">
+                    <div class="learning-content">
+                        <h2>📚 Learn Intermediate Math Operations</h2>
+                        
+                        <div class="operation-explanation">
+                            <h3>✖️ Multiplication (×)</h3>
+                            <p><strong>What is Multiplication?</strong></p>
+                            <p>Multiplication is repeated addition. It's a faster way to add the same number multiple times.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: 6 × 4 = ?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Method 1 (Repeated Addition):</strong> 6 + 6 + 6 + 6 = 24</p>
+                                    <p><strong>Method 2 (Times Table):</strong> 6 times 4 equals 24</p>
+                                    <p><strong>Think of it as:</strong> 6 groups of 4, or 4 groups of 6</p>
+                                    <p>🎯 <strong>6 × 4 = 24</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="operation-explanation">
+                            <h3>➗ Division (÷)</h3>
+                            <p><strong>What is Division?</strong></p>
+                            <p>Division is splitting a number into equal groups or finding how many times one number fits into another.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: 20 ÷ 4 = ?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Question:</strong> How many groups of 4 can we make from 20?</p>
+                                    <p><strong>Step 1:</strong> 20 ÷ 4 means "20 split into groups of 4"</p>
+                                    <p><strong>Step 2:</strong> Count: 4, 8, 12, 16, 20 (that's 5 groups)</p>
+                                    <p>🎯 <strong>20 ÷ 4 = 5</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="operation-explanation">
+                            <h3>📊 Percentage (%)</h3>
+                            <p><strong>What is Percentage?</strong></p>
+                            <p>Percentage means "out of 100". It's a way to express parts of a whole.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: 25% of 80 = ?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Step 1:</strong> 25% means 25 out of 100, or 25/100 = 0.25</p>
+                                    <p><strong>Step 2:</strong> Multiply: 0.25 × 80 = 20</p>
+                                    <p><strong>Think of it as:</strong> One quarter of 80</p>
+                                    <p>🎯 <strong>25% of 80 = 20</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="learning-actions">
+                            <button id="startIntermediateExercisesBtn" class="start-exercises-btn">🎯 Start Exercises</button>
+                            <!-- <button id="goToIntermediateCalculatorBtn" class="go-calculator-btn">🧮 Use Calculator</button> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercises Section -->
+                <div id="exercisesSection" class="exercises-section hidden">
+                    <div class="exercises-header">
+                        <h2>🎯 Practice Exercises</h2>
+                        <div class="score-display">
+                            <span>Score: <span id="scoreDisplay">0/0</span></span>
+                            <span>Streak: <span id="streakDisplay">0</span> 🔥</span>
+                        </div>
+                    </div>
+
+                    <div class="exercise-type-selection">
+                        <h3>Choose Exercise Type:</h3>
+                        <div class="exercise-buttons">
+                            <div class="exercise-category">
+                                <h4>🧮 Basic Arithmetic</h4>
+                                <button class="exercise-type-btn" data-type="single-digit-add">Single Digit Addition</button>
+                                <button class="exercise-type-btn" data-type="two-digit-add">Two Digit Addition</button>
+                                <button class="exercise-type-btn" data-type="three-digit-add">Three Digit Addition</button>
+                                <button class="exercise-type-btn" data-type="four-digit-add">Four Digit Addition</button>
+                                <button class="exercise-type-btn" data-type="three-numbers-add">Three Numbers Addition</button>
+                                <button class="exercise-type-btn" data-type="four-numbers-add">Four Numbers Addition</button>
+                                <button class="exercise-type-btn" data-type="five-numbers-add">Five Numbers Addition</button>
+                                <button class="exercise-type-btn" data-type="single-digit-sub">Single Digit Subtraction</button>
+                                <button class="exercise-type-btn" data-type="two-digit-sub">Two Digit Subtraction</button>
+                                <button class="exercise-type-btn" data-type="three-digit-sub">Three Digit Subtraction</button>
+                                <button class="exercise-type-btn" data-type="four-digit-sub">Four Digit Subtraction</button>
+                                <button class="exercise-type-btn" data-type="mixed">Mixed Operations</button>
+                            </div>
+                            
+                            <div class="exercise-category">
+                                <h4>🧠 Problem Solving</h4>
+                                <button class="exercise-type-btn problem-solving" data-type="word-problems-easy">Easy Word Problems</button>
+                                <button class="exercise-type-btn problem-solving" data-type="shopping-problems">Shopping Scenarios</button>
+                                <button class="exercise-type-btn problem-solving" data-type="time-problems">Time & Calendar</button>
+                                <button class="exercise-type-btn problem-solving" data-type="counting-problems">Counting & Groups</button>
+                                <button class="exercise-type-btn problem-solving" data-type="comparison-problems">Comparing Numbers</button>
+                                <button class="exercise-type-btn problem-solving" data-type="pattern-problems">Simple Patterns</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="exerciseContent" class="exercise-content hidden">
+                        <div class="exercise-problem">
+                            <h3 id="exerciseTitle">Exercise</h3>
+                            <div id="problemDisplay" class="problem-display"></div>
+                        </div>
+
+                        <div class="exercise-input">
+                            <label for="exerciseAnswer">Your Answer:</label>
+                            <input type="number" id="exerciseAnswer" placeholder="Enter your answer">
+                            <button id="checkAnswerBtn" class="check-answer-btn">Check Answer</button>
+                        </div>
+
+                        <div id="exerciseFeedback" class="exercise-feedback hidden">
+                            <div id="feedbackMessage"></div>
+                            <button id="nextProblemBtn" class="next-problem-btn">Next Problem</button>
+                        </div>
+
+                        <div class="exercise-controls">
+                            <button id="newExerciseTypeBtn" class="new-type-btn">Choose New Type</button>
+                            <button id="backToLearningBtn" class="back-learning-btn">📚 Back to Learning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate Exercises Section -->
+                <div id="intermediateExercisesSection" class="exercises-section hidden">
+                    <div class="exercises-header">
+                        <h2>🚀 Intermediate Exercises</h2>
+                        <div class="score-display">
+                            <span>Score: <span id="intermediateScoreDisplay">0/0</span></span>
+                            <span>Streak: <span id="intermediateStreakDisplay">0</span> 🔥</span>
+                        </div>
+                    </div>
+
+                    <div class="intermediate-exercise-type-selection">
+                        <h3>Choose Exercise Type:</h3>
+                        
+                        <!-- Math Operations -->
+                        <div class="exercise-category">
+                            <h4 class="category-title">📊 Math Operations</h4>
+                            <div class="exercise-buttons">
+                                <button class="intermediate-exercise-type-btn" data-type="single-digit-mult">Single Digit Multiplication</button>
+                                <button class="intermediate-exercise-type-btn" data-type="two-digit-mult">Two Digit Multiplication</button>
+                                <button class="intermediate-exercise-type-btn" data-type="three-digit-mult">Three Digit Multiplication</button>
+                                <button class="intermediate-exercise-type-btn" data-type="four-digit-mult">Four Digit Multiplication</button>
+                                <button class="intermediate-exercise-type-btn" data-type="single-digit-div">Single Digit Division</button>
+                                <button class="intermediate-exercise-type-btn" data-type="two-digit-div">Two Digit Division</button>
+                                <button class="intermediate-exercise-type-btn" data-type="three-digit-div">Three Digit Division</button>
+                                <button class="intermediate-exercise-type-btn" data-type="four-digit-div">Four Digit Division</button>
+                                <button class="intermediate-exercise-type-btn" data-type="three-numbers-mult">Three Numbers Multiplication</button>
+                                <button class="intermediate-exercise-type-btn" data-type="four-numbers-mult">Four Numbers Multiplication</button>
+                                <button class="intermediate-exercise-type-btn" data-type="basic-percentage">Basic Percentage</button>
+                                <button class="intermediate-exercise-type-btn" data-type="advanced-percentage">Advanced Percentage</button>
+                                <button class="intermediate-exercise-type-btn" data-type="mixed-basic">Mixed Basic (+ - × ÷)</button>
+                                <button class="intermediate-exercise-type-btn" data-type="mixed-all">Mixed All Operations</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Problem Solving -->
+                        <div class="exercise-category">
+                            <h4 class="category-title">🧩 Problem Solving</h4>
+                            <div class="exercise-buttons problem-solving">
+                                <button class="intermediate-exercise-type-btn" data-type="business-problems">💼 Business & Finance</button>
+                                <button class="intermediate-exercise-type-btn" data-type="measurement-problems">📏 Measurement & Units</button>
+                                <button class="intermediate-exercise-type-btn" data-type="ratio-problems">⚖️ Ratios & Proportions</button>
+                                <button class="intermediate-exercise-type-btn" data-type="percentage-word-problems">📊 Percentage Word Problems</button>
+                                <button class="intermediate-exercise-type-btn" data-type="area-perimeter-problems">📐 Area & Perimeter</button>
+                                <button class="intermediate-exercise-type-btn" data-type="multi-step-problems">🔢 Multi-Step Problems</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="intermediateExerciseContent" class="exercise-content hidden">
+                        <div class="exercise-problem">
+                            <h3 id="intermediateExerciseTitle">Exercise</h3>
+                            <div id="intermediateProblemDisplay" class="problem-display"></div>
+                        </div>
+
+                        <div class="exercise-input">
+                            <label for="intermediateExerciseAnswer">Your Answer:</label>
+                            <input type="number" id="intermediateExerciseAnswer" placeholder="Enter your answer" step="0.01">
+                            <button id="intermediateCheckAnswerBtn" class="check-answer-btn">Check Answer</button>
+                        </div>
+
+                        <div id="intermediateExerciseFeedback" class="exercise-feedback hidden">
+                            <div id="intermediateFeedbackMessage"></div>
+                            <button id="intermediateNextProblemBtn" class="next-problem-btn">Next Problem</button>
+                        </div>
+
+                        <div class="exercise-controls">
+                            <button id="intermediateNewExerciseTypeBtn" class="new-type-btn">Choose New Type</button>
+                            <button id="intermediateBackToLearningBtn" class="back-learning-btn">📚 Back to Learning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Learning Section -->
+                <div id="advancedLearningSection" class="learning-section hidden">
+                    <div class="learning-content">
+                        <h2>🎓 Advanced Mathematics</h2>
+                        
+                        <div class="operation-explanation">
+                            <h3>� Powers & Exponents</h3>
+                            <p><strong>What are Powers & Exponents?</strong></p>
+                            <p>Powers and exponents are a way to show repeated multiplication. The base number is multiplied by itself the number of times indicated by the exponent.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: 2³ = ?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Step 1:</strong> Read it as "2 to the power of 3"</p>
+                                    <p><strong>Step 2:</strong> Multiply 2 by itself 3 times: 2 × 2 × 2</p>
+                                    <p><strong>Step 3:</strong> Calculate: 2 × 2 = 4, then 4 × 2 = 8</p>
+                                    <p>🎯 <strong>2³ = 8</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="operation-explanation">
+                            <h3>√ Square Roots</h3>
+                            <p><strong>What are Square Roots?</strong></p>
+                            <p>A square root finds what number, when multiplied by itself, gives you the original number.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: √16 = ?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Step 1:</strong> Ask "What number × itself = 16?"</p>
+                                    <p><strong>Step 2:</strong> Try different numbers: 3 × 3 = 9 (too small)</p>
+                                    <p><strong>Step 3:</strong> Try 4: 4 × 4 = 16 ✓</p>
+                                    <p>🎯 <strong>√16 = 4</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="operation-explanation">
+                            <h3>📊 Complex Percentages</h3>
+                            <p><strong>What are Complex Percentages?</strong></p>
+                            <p>Complex percentages involve finding a percentage of larger numbers or unusual percentages like 37% or 63%.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: What is 37% of 248?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Step 1:</strong> Convert percentage to decimal: 37% = 37 ÷ 100 = 0.37</p>
+                                    <p><strong>Step 2:</strong> Multiply by the number: 0.37 × 248</p>
+                                    <p><strong>Step 3:</strong> Calculate: 0.37 × 248 = 91.76</p>
+                                    <p>🎯 <strong>37% of 248 = 91.76</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="operation-explanation">
+                            <h3>🔢 Large Number Operations</h3>
+                            <p><strong>What are Large Number Operations?</strong></p>
+                            <p>Working with large numbers requires breaking them down into smaller, manageable parts.</p>
+                            
+                            <div class="example-box">
+                                <h4>Example: 9,847 × 6 = ?</h4>
+                                <div class="step-by-step">
+                                    <p><strong>Step 1:</strong> Break down 9,847: 9,000 + 800 + 40 + 7</p>
+                                    <p><strong>Step 2:</strong> Multiply each part by 6:</p>
+                                    <p><strong>Step 3:</strong> (9,000 × 6) + (800 × 6) + (40 × 6) + (7 × 6)</p>
+                                    <p><strong>Step 4:</strong> 54,000 + 4,800 + 240 + 42 = 59,082</p>
+                                    <p>🎯 <strong>9,847 × 6 = 59,082</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="learning-actions">
+                            <button id="startAdvancedExercisesBtn" class="start-exercises-btn">🏋️ Start Advanced Exercises</button>
+                            <!-- <button id="goToAdvancedCalculatorBtn" class="go-calculator-btn">🧮 Go to Calculator</button> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geometric Learning Section -->
+                <div id="geometricLearningSection" class="learning-section hidden">
+                    <div class="learning-content">
+                        <h2>📐 Geometric Calculations</h2>
+                        
+                        <div class="geometric-exercise-type-selection">
+                            <h3>Choose Calculation Type:</h3>
+                            <div class="exercise-buttons">
+                                <button class="geometric-exercise-type-btn" data-type="rectangle-area">Rectangle & Square Areas</button>
+                                <button class="geometric-exercise-type-btn" data-type="circle-calculations">Circle Calculations</button>
+                                <button class="geometric-exercise-type-btn" data-type="triangle-properties">Triangle Properties</button>
+                                <button class="geometric-exercise-type-btn" data-type="perimeter-calculations">Perimeter Calculations</button>
+                            </div>
+                        </div>
+
+                        <!-- Geometric Learning Content (Initially Hidden) -->
+                        <div id="geometricLearningContent" class="geometric-learning-content hidden">
+                            <div id="rectangleAreaLearning" class="operation-explanation hidden">
+                                <h3>📐 Rectangle & Square Areas</h3>
+                                <p><strong>What is Area?</strong></p>
+                                <p>Area is the amount of space inside a 2D shape, measured in square units.</p>
+                                
+                                <div class="example-box">
+                                    <h4>Rectangle Area Formula: Length × Width</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Rectangle with length 8 units and width 5 units</p>
+                                        <p><strong>Step 1:</strong> Identify length = 8, width = 5</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Area = length × width</p>
+                                        <p><strong>Step 3:</strong> Calculate: 8 × 5 = 40</p>
+                                        <p>🎯 <strong>Area = 40 square units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Square Area Formula: Side × Side</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Square with side 6 units</p>
+                                        <p><strong>Step 1:</strong> Identify side = 6</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Area = side × side</p>
+                                        <p><strong>Step 3:</strong> Calculate: 6 × 6 = 36</p>
+                                        <p>🎯 <strong>Area = 36 square units</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="circleCalculationsLearning" class="operation-explanation hidden">
+                                <h3>⭕ Circle Calculations</h3>
+                                <p><strong>What are Circle Measurements?</strong></p>
+                                <p>Circles have two main measurements: area (space inside) and circumference (distance around).</p>
+                                
+                                <div class="example-box">
+                                    <h4>Circle Area Formula: π × radius²</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Circle with radius 4 units</p>
+                                        <p><strong>Step 1:</strong> Identify radius = 4</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Area = π × radius²</p>
+                                        <p><strong>Step 3:</strong> Calculate: 3.14 × 4² = 3.14 × 16 = 50.24</p>
+                                        <p>🎯 <strong>Area = 50.24 square units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Circle Circumference Formula: 2 × π × radius</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Circle with radius 3 units</p>
+                                        <p><strong>Step 1:</strong> Identify radius = 3</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Circumference = 2 × π × radius</p>
+                                        <p><strong>Step 3:</strong> Calculate: 2 × 3.14 × 3 = 18.84</p>
+                                        <p>🎯 <strong>Circumference = 18.84 units</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="trianglePropertiesLearning" class="operation-explanation hidden">
+                                <h3>🔺 Triangle Properties</h3>
+                                <p><strong>What is Triangle Area?</strong></p>
+                                <p>Triangle area is half the space of a rectangle with the same base and height.</p>
+                                
+                                <div class="example-box">
+                                    <h4>Triangle Area Formula: (Base × Height) ÷ 2</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Triangle with base 10 units and height 6 units</p>
+                                        <p><strong>Step 1:</strong> Identify base = 10, height = 6</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Area = (base × height) ÷ 2</p>
+                                        <p><strong>Step 3:</strong> Calculate: (10 × 6) ÷ 2 = 60 ÷ 2 = 30</p>
+                                        <p>🎯 <strong>Area = 30 square units</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="perimeterCalculationsLearning" class="operation-explanation hidden">
+                                <h3>📏 Perimeter Calculations</h3>
+                                <p><strong>What is Perimeter?</strong></p>
+                                <p>Perimeter is the total distance around the outside of a shape.</p>
+                                
+                                <div class="example-box">
+                                    <h4>Rectangle Perimeter: 2 × (Length + Width)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Rectangle with length 7 and width 4</p>
+                                        <p><strong>Step 1:</strong> Add length + width: 7 + 4 = 11</p>
+                                        <p><strong>Step 2:</strong> Multiply by 2: 2 × 11 = 22</p>
+                                        <p>🎯 <strong>Perimeter = 22 units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Square Perimeter: 4 × Side</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Square with side 5</p>
+                                        <p><strong>Step 1:</strong> Multiply side by 4: 4 × 5 = 20</p>
+                                        <p>🎯 <strong>Perimeter = 20 units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Triangle Perimeter: Side₁ + Side₂ + Side₃</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Triangle with sides 3, 4, 5</p>
+                                        <p><strong>Step 1:</strong> Add all sides: 3 + 4 + 5 = 12</p>
+                                        <p>🎯 <strong>Perimeter = 12 units</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="learning-actions">
+                                <button id="startGeometricExercisesBtn" class="start-exercises-btn">🎯 Start Exercises</button>
+                                <button id="backToGeometricSelectionBtn" class="back-learning-btn">📐 Back to Selection</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Geometric Learning Section -->
+                <div id="advancedGeometricLearningSection" class="learning-section hidden">
+                    <div class="learning-content">
+                        <h2>📦 Advanced Geometric Calculations (3D)</h2>
+                        
+                        <div class="advanced-geometric-exercise-type-selection">
+                            <h3>Choose 3D Calculation Type:</h3>
+                            <div class="exercise-buttons">
+                                <button class="advanced-geometric-exercise-type-btn" data-type="cube-rectangular-volumes">Cube & Rectangular Prism Volumes</button>
+                                <button class="advanced-geometric-exercise-type-btn" data-type="sphere-calculations">Sphere Calculations</button>
+                                <button class="advanced-geometric-exercise-type-btn" data-type="cylinder-cone-properties">Cylinder & Cone Properties</button>
+                                <button class="advanced-geometric-exercise-type-btn" data-type="surface-area-calculations">Surface Area Calculations</button>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Geometric Learning Content (Initially Hidden) -->
+                        <div id="advancedGeometricLearningContent" class="advanced-geometric-learning-content hidden">
+                            <div id="cubeRectangularVolumesLearning" class="operation-explanation hidden">
+                                <h3>📦 Cube & Rectangular Prism Volumes</h3>
+                                <p><strong>What is Volume?</strong></p>
+                                <p>Volume is the amount of 3D space inside a solid object, measured in cubic units.</p>
+                                
+                                <div class="visualization-hint">
+                                    <h5>3D Visualization Tip:</h5>
+                                    <p>Imagine filling the shape with tiny unit cubes. Volume counts how many fit inside!</p>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4>Cube Volume Formula: Side³ (Side × Side × Side)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Cube with side 4 units</p>
+                                        <p><strong>Step 1:</strong> Identify side = 4</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Volume = side³</p>
+                                        <p><strong>Step 3:</strong> Calculate: 4³ = 4 × 4 × 4 = 64</p>
+                                        <p>🎯 <strong>Volume = 64 cubic units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Rectangular Prism Volume Formula: Length × Width × Height</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Rectangular prism with length 6, width 4, height 3</p>
+                                        <p><strong>Step 1:</strong> Identify length = 6, width = 4, height = 3</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Volume = l × w × h</p>
+                                        <p><strong>Step 3:</strong> Calculate: 6 × 4 × 3 = 72</p>
+                                        <p>🎯 <strong>Volume = 72 cubic units</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="sphereCalculationsLearning" class="operation-explanation hidden">
+                                <h3>🌐 Sphere Calculations</h3>
+                                <p><strong>What is a Sphere?</strong></p>
+                                <p>A sphere is a perfectly round 3D object, like a ball. Every point on its surface is the same distance from the center.</p>
+                                
+                                <div class="visualization-hint">
+                                    <h5>3D Visualization Tip:</h5>
+                                    <p>Think of a sphere as a circle that has been rotated in all directions around its center!</p>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4>Sphere Volume Formula: (4/3) × π × radius³</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Sphere with radius 3 units</p>
+                                        <p><strong>Step 1:</strong> Identify radius = 3</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Volume = (4/3) × π × r³</p>
+                                        <p><strong>Step 3:</strong> Calculate: (4/3) × 3.14 × 3³ = (4/3) × 3.14 × 27 ≈ 113.04</p>
+                                        <p>🎯 <strong>Volume ≈ 113.04 cubic units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Sphere Surface Area Formula: 4 × π × radius²</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Sphere with radius 2 units</p>
+                                        <p><strong>Step 1:</strong> Identify radius = 2</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Surface Area = 4 × π × r²</p>
+                                        <p><strong>Step 3:</strong> Calculate: 4 × 3.14 × 2² = 4 × 3.14 × 4 = 50.24</p>
+                                        <p>🎯 <strong>Surface Area = 50.24 square units</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="cylinderConePropertiesLearning" class="operation-explanation hidden">
+                                <h3>🥤 Cylinder & Cone Properties</h3>
+                                <p><strong>Understanding 3D Circular Objects</strong></p>
+                                <p>Cylinders and cones are based on circles but extended into 3D space.</p>
+                                
+                                <div class="visualization-hint">
+                                    <h5>3D Visualization Tip:</h5>
+                                    <p>A cylinder is like stacking identical circles. A cone tapers from a circle to a point!</p>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4>Cylinder Volume Formula: π × radius² × height</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Cylinder with radius 3 and height 8</p>
+                                        <p><strong>Step 1:</strong> Identify radius = 3, height = 8</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Volume = π × r² × h</p>
+                                        <p><strong>Step 3:</strong> Calculate: 3.14 × 3² × 8 = 3.14 × 9 × 8 = 226.08</p>
+                                        <p>🎯 <strong>Volume = 226.08 cubic units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Cone Volume Formula: (1/3) × π × radius² × height</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Cone with radius 4 and height 6</p>
+                                        <p><strong>Step 1:</strong> Identify radius = 4, height = 6</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Volume = (1/3) × π × r² × h</p>
+                                        <p><strong>Step 3:</strong> Calculate: (1/3) × 3.14 × 4² × 6 = (1/3) × 3.14 × 16 × 6 ≈ 100.48</p>
+                                        <p>🎯 <strong>Volume ≈ 100.48 cubic units</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="surfaceAreaCalculationsLearning" class="operation-explanation hidden">
+                                <h3>📏 Surface Area Calculations</h3>
+                                <p><strong>What is Surface Area?</strong></p>
+                                <p>Surface area is the total area of all the surfaces that make up a 3D object.</p>
+                                
+                                <div class="visualization-hint">
+                                    <h5>3D Visualization Tip:</h5>
+                                    <p>Imagine wrapping the 3D shape with paper. Surface area is how much paper you need!</p>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4>Cube Surface Area Formula: 6 × side²</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Cube with side 5 units</p>
+                                        <p><strong>Step 1:</strong> Remember: a cube has 6 identical square faces</p>
+                                        <p><strong>Step 2:</strong> Apply formula: Surface Area = 6 × side²</p>
+                                        <p><strong>Step 3:</strong> Calculate: 6 × 5² = 6 × 25 = 150</p>
+                                        <p>🎯 <strong>Surface Area = 150 square units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Rectangular Prism Surface Area Formula: 2(lw + lh + wh)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Rectangular prism: length 6, width 4, height 3</p>
+                                        <p><strong>Step 1:</strong> Identify l = 6, w = 4, h = 3</p>
+                                        <p><strong>Step 2:</strong> Apply formula: SA = 2(lw + lh + wh)</p>
+                                        <p><strong>Step 3:</strong> Calculate: 2(6×4 + 6×3 + 4×3) = 2(24 + 18 + 12) = 2(54) = 108</p>
+                                        <p>🎯 <strong>Surface Area = 108 square units</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="learning-actions">
+                                <button id="startAdvancedGeometricExercisesBtn" class="start-exercises-btn">🎯 Start 3D Exercises</button>
+                                <button id="backToAdvancedGeometricSelectionBtn" class="back-learning-btn">📦 Back to Selection</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Exercises Section -->
+                <div id="advancedExercisesSection" class="exercises-section hidden">
+                    <div class="exercises-header">
+                        <h2>🎯 Advanced Exercises</h2>
+                        <div class="score-display">
+                            <span>Score: <span id="advancedScoreDisplay">0/0</span></span>
+                            <span>Streak: <span id="advancedStreakDisplay">0</span> 🔥</span>
+                        </div>
+                    </div>
+
+                    <div class="advanced-exercise-type-selection">
+                        <h3>Choose Exercise Type:</h3>
+                        
+                        <!-- Math Operations -->
+                        <div class="exercise-category">
+                            <h4 class="category-title">🔢 Advanced Operations</h4>
+                            <div class="exercise-buttons">
+                                <button class="advanced-exercise-type-btn" data-type="single-digit-power">Single Digit Powers</button>
+                                <button class="advanced-exercise-type-btn" data-type="two-digit-power">Two Digit Powers</button>
+                                <button class="advanced-exercise-type-btn" data-type="three-digit-power">Three Digit Powers</button>
+                                <button class="advanced-exercise-type-btn" data-type="four-digit-power">Four Digit Powers</button>
+                                <button class="advanced-exercise-type-btn" data-type="single-digit-sqrt">Single Digit Square Root</button>
+                                <button class="advanced-exercise-type-btn" data-type="two-digit-sqrt">Two Digit Square Root</button>
+                                <button class="advanced-exercise-type-btn" data-type="three-digit-sqrt">Three Digit Square Root</button>
+                                <button class="advanced-exercise-type-btn" data-type="four-digit-sqrt">Four Digit Square Root</button>
+                                <button class="advanced-exercise-type-btn" data-type="complex-percentage">Complex Percentage</button>
+                                <button class="advanced-exercise-type-btn" data-type="mixed-advanced">Mixed Advanced Operations</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Advanced Problem Solving -->
+                        <div class="exercise-category">
+                            <h4 class="category-title">🧠 Advanced Problem Solving</h4>
+                            <div class="exercise-buttons problem-solving">
+                                <button class="advanced-exercise-type-btn" data-type="scientific-problems">🔬 Scientific Applications</button>
+                                <button class="advanced-exercise-type-btn" data-type="engineering-problems">⚙️ Engineering & Physics</button>
+                                <button class="advanced-exercise-type-btn" data-type="financial-problems">💰 Advanced Finance</button>
+                                <button class="advanced-exercise-type-btn" data-type="statistical-problems">📊 Statistics & Data</button>
+                                <button class="advanced-exercise-type-btn" data-type="optimization-problems">🎯 Optimization</button>
+                                <button class="advanced-exercise-type-btn" data-type="exponential-problems">📈 Exponential Growth</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="advancedExerciseContent" class="exercise-content hidden">
+                        <div class="exercise-problem">
+                            <h3 id="advancedExerciseTitle">Exercise</h3>
+                            <div id="advancedProblemDisplay" class="problem-display"></div>
+                        </div>
+
+                        <div class="exercise-input">
+                            <label for="advancedExerciseAnswer">Your Answer:</label>
+                            <input type="number" id="advancedExerciseAnswer" placeholder="Enter your answer" step="0.01">
+                            <button id="advancedCheckAnswerBtn" class="check-answer-btn">Check Answer</button>
+                        </div>
+
+                        <div id="advancedExerciseFeedback" class="exercise-feedback hidden">
+                            <div id="advancedFeedbackMessage"></div>
+                            <button id="advancedNextProblemBtn" class="next-problem-btn">Next Problem</button>
+                        </div>
+
+                        <div class="exercise-controls">
+                            <button id="advancedNewExerciseTypeBtn" class="new-type-btn">Choose New Type</button>
+                            <button id="advancedBackToLearningBtn" class="back-learning-btn">📚 Back to Learning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geometric Exercises Section -->
+                <div id="geometricExercisesSection" class="exercises-section hidden">
+                    <div class="exercises-header">
+                        <h2>📐 Geometric Exercises</h2>
+                        <div class="score-display">
+                            <span>Score: <span id="geometricScoreDisplay">0/0</span></span>
+                            <span>Streak: <span id="geometricStreakDisplay">0</span> 🔥</span>
+                        </div>
+                    </div>
+
+                    <div id="geometricExerciseContent" class="exercise-content">
+                        <div class="exercise-problem">
+                            <h3 id="geometricExerciseTitle">Exercise</h3>
+                            <div id="geometricProblemDisplay" class="problem-display"></div>
+                        </div>
+
+                        <div class="exercise-input">
+                            <label for="geometricExerciseAnswer">Your Answer:</label>
+                            <input type="number" id="geometricExerciseAnswer" placeholder="Enter your answer" step="0.01">
+                            <button id="geometricCheckAnswerBtn" class="check-answer-btn">Check Answer</button>
+                        </div>
+
+                        <div id="geometricExerciseFeedback" class="exercise-feedback hidden">
+                            <div id="geometricFeedbackMessage"></div>
+                            <button id="geometricNextProblemBtn" class="next-problem-btn">Next Problem</button>
+                        </div>
+
+                        <div class="exercise-controls">
+                            <button id="geometricNewExerciseTypeBtn" class="new-type-btn">Choose New Type</button>
+                            <button id="geometricBackToLearningBtn" class="back-learning-btn">📐 Back to Geometric Learning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Geometric Exercises Section -->
+                <div id="advancedGeometricExercisesSection" class="exercises-section hidden">
+                    <div class="exercises-header">
+                        <h2>📦 Advanced Geometric Exercises (3D)</h2>
+                        <div class="score-display">
+                            <span>Score: <span id="advancedGeometricScoreDisplay">0/0</span></span>
+                            <span>Streak: <span id="advancedGeometricStreakDisplay">0</span> 🔥</span>
+                        </div>
+                    </div>
+
+                    <!-- Exercise Type Selection -->
+                    <div class="advanced-geometric-exercise-type-selection">
+                        <h3>Choose 3D Calculation Type:</h3>
+                        <div class="exercise-buttons">
+                            <button class="advanced-geometric-exercise-type-btn" data-type="cube-rectangular-volumes">Cube & Rectangular Prism Volumes</button>
+                            <button class="advanced-geometric-exercise-type-btn" data-type="sphere-calculations">Sphere Calculations</button>
+                            <button class="advanced-geometric-exercise-type-btn" data-type="cylinder-cone-properties">Cylinder & Cone Properties</button>
+                            <button class="advanced-geometric-exercise-type-btn" data-type="surface-area-calculations">Surface Area Calculations</button>
+                        </div>
+                    </div>
+
+                    <div id="advancedGeometricExerciseContent" class="exercise-content hidden">
+                        <div class="exercise-problem">
+                            <h3 id="advancedGeometricExerciseTitle">3D Exercise</h3>
+                            <div id="advancedGeometricProblemDisplay" class="problem-display"></div>
+                        </div>
+
+                        <div class="exercise-input">
+                            <label for="advancedGeometricExerciseAnswer">Your Answer:</label>
+                            <input type="number" id="advancedGeometricExerciseAnswer" placeholder="Enter your answer" step="0.01">
+                            <button id="advancedGeometricCheckAnswerBtn" class="check-answer-btn">Check Answer</button>
+                        </div>
+
+                        <div id="advancedGeometricExerciseFeedback" class="exercise-feedback hidden">
+                            <div id="advancedGeometricFeedbackMessage"></div>
+                            <button id="advancedGeometricNextProblemBtn" class="next-problem-btn">Next Problem</button>
+                        </div>
+
+                        <div class="exercise-controls">
+                            <button id="advancedGeometricNewExerciseTypeBtn" class="new-type-btn">Choose New Type</button>
+                            <button id="advancedGeometricBackToLearningBtn" class="back-learning-btn">📦 Back to 3D Learning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algebra Learning Section -->
+                <div id="algebraLearningSection" class="learning-section hidden">
+                    <div class="learning-content">
+                        <h2>🔢 Algebra Calculations</h2>
+                        
+                        <div class="algebra-exercise-type-selection">
+                            <h3>Choose Algebra Type:</h3>
+                            <div class="exercise-buttons">
+                                <button class="algebra-exercise-type-btn" data-type="linear-equations">Linear Equations</button>
+                                <button class="algebra-exercise-type-btn" data-type="quadratic-equations">Quadratic Equations</button>
+                                <button class="algebra-exercise-type-btn" data-type="polynomial-operations">Polynomial Operations</button>
+                                <button class="algebra-exercise-type-btn" data-type="systems-equations">Systems of Equations</button>
+                            </div>
+                        </div>
+
+                        <!-- Algebra Learning Content (Initially Hidden) -->
+                        <div id="algebraLearningContent" class="algebra-learning-content hidden">
+                            <div id="linearequationsLearning" class="operation-explanation hidden">
+                                <h3>📐 Linear Equations</h3>
+                                <p><strong>What are Linear Equations?</strong></p>
+                                <p>Linear equations are equations where the highest power of any variable is 1. They form straight lines when graphed.</p>
+                                
+                                <div class="example-box">
+                                    <h4>Solving Linear Equations: ax + b = c</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Solve 3x + 5 = 14</p>
+                                        <p><strong>Step 1:</strong> Subtract 5 from both sides: 3x + 5 - 5 = 14 - 5</p>
+                                        <p><strong>Step 2:</strong> Simplify: 3x = 9</p>
+                                        <p><strong>Step 3:</strong> Divide both sides by 3: x = 3</p>
+                                        <p>🎯 <strong>Solution: x = 3</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Linear Equations with Variables on Both Sides</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Solve 2x + 3 = x + 7</p>
+                                        <p><strong>Step 1:</strong> Subtract x from both sides: 2x - x + 3 = x - x + 7</p>
+                                        <p><strong>Step 2:</strong> Simplify: x + 3 = 7</p>
+                                        <p><strong>Step 3:</strong> Subtract 3 from both sides: x = 4</p>
+                                        <p>🎯 <strong>Solution: x = 4</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="quadraticequationsLearning" class="operation-explanation hidden">
+                                <h3>⚡ Quadratic Equations</h3>
+                                <p><strong>What are Quadratic Equations?</strong></p>
+                                <p>Quadratic equations are equations where the highest power of the variable is 2. They form parabolas when graphed.</p>
+                                
+                                <div class="example-box">
+                                    <h4>Quadratic Formula: x = (-b ± √(b² - 4ac)) / 2a</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Solve x² - 5x + 6 = 0</p>
+                                        <p><strong>Step 1:</strong> Identify a = 1, b = -5, c = 6</p>
+                                        <p><strong>Step 2:</strong> Calculate discriminant: b² - 4ac = 25 - 24 = 1</p>
+                                        <p><strong>Step 3:</strong> Apply formula: x = (5 ± √1) / 2 = (5 ± 1) / 2</p>
+                                        <p><strong>Step 4:</strong> Solutions: x = 3 or x = 2</p>
+                                        <p>🎯 <strong>Solutions: x = 2, x = 3</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Factoring Method</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Solve x² - 7x + 12 = 0</p>
+                                        <p><strong>Step 1:</strong> Find two numbers that multiply to 12 and add to -7</p>
+                                        <p><strong>Step 2:</strong> Those numbers are -3 and -4</p>
+                                        <p><strong>Step 3:</strong> Factor: (x - 3)(x - 4) = 0</p>
+                                        <p><strong>Step 4:</strong> Solutions: x = 3 or x = 4</p>
+                                        <p>🎯 <strong>Solutions: x = 3, x = 4</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="polynomialoperationsLearning" class="operation-explanation hidden">
+                                <h3>🔄 Polynomial Operations</h3>
+                                <p><strong>What are Polynomial Operations?</strong></p>
+                                <p>Polynomials are expressions with multiple terms containing variables raised to different powers. We can add, subtract, multiply, and divide them.</p>
+                                
+                                <div class="example-box">
+                                    <h4>Adding Polynomials</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> (3x² + 2x + 1) + (x² - x + 4)</p>
+                                        <p><strong>Step 1:</strong> Group like terms</p>
+                                        <p><strong>Step 2:</strong> (3x² + x²) + (2x - x) + (1 + 4)</p>
+                                        <p><strong>Step 3:</strong> Simplify: 4x² + x + 5</p>
+                                        <p>🎯 <strong>Result: 4x² + x + 5</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Multiplying Polynomials (FOIL Method)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> (x + 3)(x + 2)</p>
+                                        <p><strong>Step 1:</strong> First terms: x × x = x²</p>
+                                        <p><strong>Step 2:</strong> Outer terms: x × 2 = 2x</p>
+                                        <p><strong>Step 3:</strong> Inner terms: 3 × x = 3x</p>
+                                        <p><strong>Step 4:</strong> Last terms: 3 × 2 = 6</p>
+                                        <p><strong>Step 5:</strong> Combine: x² + 2x + 3x + 6 = x² + 5x + 6</p>
+                                        <p>🎯 <strong>Result: x² + 5x + 6</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="systemsequationsLearning" class="operation-explanation hidden">
+                                <h3>⚖️ Systems of Equations</h3>
+                                <p><strong>What are Systems of Equations?</strong></p>
+                                <p>Systems of equations are sets of two or more equations that share the same variables. We solve for values that satisfy all equations simultaneously.</p>
+                                
+                                <div class="example-box">
+                                    <h4>Substitution Method</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> x + y = 5 and x - y = 1</p>
+                                        <p><strong>Step 1:</strong> From first equation: y = 5 - x</p>
+                                        <p><strong>Step 2:</strong> Substitute into second: x - (5 - x) = 1</p>
+                                        <p><strong>Step 3:</strong> Simplify: x - 5 + x = 1, so 2x = 6</p>
+                                        <p><strong>Step 4:</strong> Solve: x = 3</p>
+                                        <p><strong>Step 5:</strong> Find y: y = 5 - 3 = 2</p>
+                                        <p>🎯 <strong>Solution: x = 3, y = 2</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Elimination Method</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> 2x + 3y = 7 and x - 3y = 2</p>
+                                        <p><strong>Step 1:</strong> Add the equations to eliminate y</p>
+                                        <p><strong>Step 2:</strong> (2x + 3y) + (x - 3y) = 7 + 2</p>
+                                        <p><strong>Step 3:</strong> Simplify: 3x = 9, so x = 3</p>
+                                        <p><strong>Step 4:</strong> Substitute back: 3 - 3y = 2, so y = 1/3</p>
+                                        <p>🎯 <strong>Solution: x = 3, y = 1/3</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="learning-actions">
+                                <button id="startAlgebraExercisesBtn" class="start-exercises-btn">🎯 Start Algebra Exercises</button>
+                                <button id="backToAlgebraSelectionBtn" class="back-learning-btn">🔢 Back to Selection</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algebra Exercises Section -->
+                <div id="algebraExercisesSection" class="exercises-section hidden">
+                    <div class="exercises-header">
+                        <h2>🔢 Algebra Exercises</h2>
+                        <div class="score-display">
+                            <span>Score: <span id="algebraScoreDisplay">0/0</span></span>
+                            <span>Streak: <span id="algebraStreakDisplay">0</span> 🔥</span>
+                        </div>
+                    </div>
+
+                    <!-- Exercise Type Selection -->
+                    <div class="algebra-exercise-type-selection">
+                        <h3>Choose Algebra Type:</h3>
+                        <div class="exercise-buttons">
+                            <button class="algebra-exercise-type-btn" data-type="linear-equations">Linear Equations</button>
+                            <button class="algebra-exercise-type-btn" data-type="quadratic-equations">Quadratic Equations</button>
+                            <button class="algebra-exercise-type-btn" data-type="polynomial-operations">Polynomial Operations</button>
+                            <button class="algebra-exercise-type-btn" data-type="systems-equations">Systems of Equations</button>
+                        </div>
+                    </div>
+
+                    <div id="algebraExerciseContent" class="exercise-content hidden">
+                        <div class="exercise-problem">
+                            <h3 id="algebraExerciseTitle">Algebra Exercise</h3>
+                            <div id="algebraProblemDisplay" class="problem-display"></div>
+                        </div>
+
+                        <div class="exercise-input">
+                            <label for="algebraExerciseAnswer">Your Answer:</label>
+                            <input type="text" id="algebraExerciseAnswer" placeholder="Enter your answer (e.g., x = 3 or x = 2, y = 1)" step="0.01">
+                            <button id="algebraCheckAnswerBtn" class="check-answer-btn">Check Answer</button>
+                        </div>
+
+                        <div id="algebraExerciseFeedback" class="exercise-feedback hidden">
+                            <div id="algebraFeedbackMessage"></div>
+                            <button id="algebraNextProblemBtn" class="next-problem-btn">Next Problem</button>
+                        </div>
+
+                        <div class="exercise-controls">
+                            <button id="algebraNewExerciseTypeBtn" class="new-type-btn">Choose New Type</button>
+                            <button id="algebraBackToLearningBtn" class="back-learning-btn">🔢 Back to Algebra Learning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trigonometry Learning Section -->
+                <div id="trigonometryLearningSection" class="learning-section hidden">
+                    <div class="learning-content">
+                        <h2>📐 Trigonometry Calculations</h2>
+                        
+                        <div class="trigonometry-exercise-type-selection">
+                            <h3>Choose Trigonometry Type:</h3>
+                            <div class="exercise-buttons">
+                                <button class="trigonometry-exercise-type-btn" data-type="basic-trig">Basic Trigonometry (Sin, Cos, Tan)</button>
+                                <button class="trigonometry-exercise-type-btn" data-type="inverse-trig">Inverse Trigonometry</button>
+                                <button class="trigonometry-exercise-type-btn" data-type="trig-identities">Trigonometric Identities</button>
+                                <button class="trigonometry-exercise-type-btn" data-type="triangle-solving">Triangle Solving</button>
+                            </div>
+                        </div>
+
+                        <!-- Trigonometry Learning Content -->
+                        <div class="trigonometry-learning-content hidden">
+                            <div id="basicTrigLearning" class="operation-explanation hidden">
+                                <h3>📐 Basic Trigonometry (Sin, Cos, Tan)</h3>
+                                <p><strong>What is Trigonometry?</strong></p>
+                                <p>Trigonometry is the study of triangles and the relationships between their angles and sides. The three main functions are sine, cosine, and tangent.</p>
+                                
+                                <div class="visualization-hint">
+                                    <h5>Triangle Memory Tip:</h5>
+                                    <p>Remember SOH-CAH-TOA: Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent</p>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4>Finding Sine (Sin) of an Angle</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> In a right triangle, opposite side = 3, hypotenuse = 5</p>
+                                        <p><strong>Step 1:</strong> Use the formula: sin(θ) = opposite/hypotenuse</p>
+                                        <p><strong>Step 2:</strong> sin(θ) = 3/5 = 0.6</p>
+                                        <p><strong>Step 3:</strong> θ = sin⁻¹(0.6) ≈ 36.87°</p>
+                                        <p>🎯 <strong>sin(36.87°) = 0.6</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Finding Cosine (Cos) of an Angle</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> In a right triangle, adjacent side = 4, hypotenuse = 5</p>
+                                        <p><strong>Step 1:</strong> Use the formula: cos(θ) = adjacent/hypotenuse</p>
+                                        <p><strong>Step 2:</strong> cos(θ) = 4/5 = 0.8</p>
+                                        <p><strong>Step 3:</strong> θ = cos⁻¹(0.8) ≈ 36.87°</p>
+                                        <p>🎯 <strong>cos(36.87°) = 0.8</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Finding Tangent (Tan) of an Angle</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> In a right triangle, opposite = 3, adjacent = 4</p>
+                                        <p><strong>Step 1:</strong> Use the formula: tan(θ) = opposite/adjacent</p>
+                                        <p><strong>Step 2:</strong> tan(θ) = 3/4 = 0.75</p>
+                                        <p><strong>Step 3:</strong> θ = tan⁻¹(0.75) ≈ 36.87°</p>
+                                        <p>🎯 <strong>tan(36.87°) = 0.75</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="trigonometry-learning-controls">
+                                    <button id="startBasicTrigExercisesBtn" class="start-exercises-btn">Start Basic Trigonometry Exercises</button>
+                                    <button id="backToTrigSelectionBtn" class="back-to-selection-btn">← Back to Trigonometry Types</button>
+                                </div>
+                            </div>
+
+                            <div id="inverseTrigLearning" class="operation-explanation hidden">
+                                <h3>🔄 Inverse Trigonometry</h3>
+                                <p><strong>What are Inverse Trigonometric Functions?</strong></p>
+                                <p>Inverse trigonometric functions help us find angles when we know the trigonometric ratios. They "undo" the trigonometric functions.</p>
+                                
+                                <div class="visualization-hint">
+                                    <h5>Inverse Function Tip:</h5>
+                                    <p>If sin(30°) = 0.5, then sin⁻¹(0.5) = 30°. The inverse function gives us back the original angle!</p>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4>Using Arcsine (sin⁻¹)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Find the angle whose sine is 0.707</p>
+                                        <p><strong>Step 1:</strong> Use the inverse sine function: θ = sin⁻¹(0.707)</p>
+                                        <p><strong>Step 2:</strong> Calculate: θ ≈ 45°</p>
+                                        <p><strong>Step 3:</strong> Verify: sin(45°) ≈ 0.707 ✓</p>
+                                        <p>🎯 <strong>sin⁻¹(0.707) = 45°</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Using Arccosine (cos⁻¹)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Find the angle whose cosine is 0.5</p>
+                                        <p><strong>Step 1:</strong> Use the inverse cosine function: θ = cos⁻¹(0.5)</p>
+                                        <p><strong>Step 2:</strong> Calculate: θ = 60°</p>
+                                        <p><strong>Step 3:</strong> Verify: cos(60°) = 0.5 ✓</p>
+                                        <p>🎯 <strong>cos⁻¹(0.5) = 60°</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Using Arctangent (tan⁻¹)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Find the angle whose tangent is 1</p>
+                                        <p><strong>Step 1:</strong> Use the inverse tangent function: θ = tan⁻¹(1)</p>
+                                        <p><strong>Step 2:</strong> Calculate: θ = 45°</p>
+                                        <p><strong>Step 3:</strong> Verify: tan(45°) = 1 ✓</p>
+                                        <p>🎯 <strong>tan⁻¹(1) = 45°</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="trigonometry-learning-controls">
+                                    <button id="startInverseTrigExercisesBtn" class="start-exercises-btn">Start Inverse Trigonometry Exercises</button>
+                                    <button id="backToTrigSelectionBtn" class="back-to-selection-btn">← Back to Trigonometry Types</button>
+                                </div>
+                            </div>
+
+                            <div id="trigIdentitiesLearning" class="operation-explanation hidden">
+                                <h3>🎯 Trigonometric Identities</h3>
+                                <p><strong>What are Trigonometric Identities?</strong></p>
+                                <p>Trigonometric identities are equations that are true for all values of the variables. They help us simplify complex trigonometric expressions.</p>
+                                
+                                <div class="visualization-hint">
+                                    <h5>Identity Memory Tip:</h5>
+                                    <p>The Pythagorean identity sin²θ + cos²θ = 1 comes directly from the Pythagorean theorem applied to the unit circle!</p>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4>Pythagorean Identity: sin²θ + cos²θ = 1</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> If sin(θ) = 0.6, find cos²(θ)</p>
+                                        <p><strong>Step 1:</strong> Use the identity: sin²θ + cos²θ = 1</p>
+                                        <p><strong>Step 2:</strong> Substitute: (0.6)² + cos²θ = 1</p>
+                                        <p><strong>Step 3:</strong> Solve: 0.36 + cos²θ = 1</p>
+                                        <p><strong>Step 4:</strong> cos²θ = 0.64</p>
+                                        <p>🎯 <strong>cos²(θ) = 0.64</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Tangent Identity: tan(θ) = sin(θ)/cos(θ)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> If sin(θ) = 0.8 and cos(θ) = 0.6, find tan(θ)</p>
+                                        <p><strong>Step 1:</strong> Use the identity: tan(θ) = sin(θ)/cos(θ)</p>
+                                        <p><strong>Step 2:</strong> Substitute: tan(θ) = 0.8/0.6</p>
+                                        <p><strong>Step 3:</strong> Calculate: tan(θ) = 1.333...</p>
+                                        <p>🎯 <strong>tan(θ) ≈ 1.33</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Double Angle Formula: sin(2θ) = 2sin(θ)cos(θ)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> If sin(θ) = 0.6 and cos(θ) = 0.8, find sin(2θ)</p>
+                                        <p><strong>Step 1:</strong> Use the formula: sin(2θ) = 2sin(θ)cos(θ)</p>
+                                        <p><strong>Step 2:</strong> Substitute: sin(2θ) = 2(0.6)(0.8)</p>
+                                        <p><strong>Step 3:</strong> Calculate: sin(2θ) = 0.96</p>
+                                        <p>🎯 <strong>sin(2θ) = 0.96</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="trigonometry-learning-controls">
+                                    <button id="startTrigIdentitiesExercisesBtn" class="start-exercises-btn">Start Trigonometric Identities Exercises</button>
+                                    <button id="backToTrigSelectionBtn" class="back-to-selection-btn">← Back to Trigonometry Types</button>
+                                </div>
+                            </div>
+
+                            <div id="triangleSolvingLearning" class="operation-explanation hidden">
+                                <h3>🔺 Triangle Solving</h3>
+                                <p><strong>What is Triangle Solving?</strong></p>
+                                <p>Triangle solving means finding unknown sides or angles in any triangle using the Law of Sines and Law of Cosines.</p>
+                                
+                                <div class="visualization-hint">
+                                    <h5>Law Memory Tip:</h5>
+                                    <p>Law of Sines: a/sin(A) = b/sin(B) = c/sin(C). Law of Cosines: c² = a² + b² - 2ab cos(C)</p>
+                                </div>
+                                
+                                <div class="example-box">
+                                    <h4>Law of Sines: a/sin(A) = b/sin(B) = c/sin(C)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Triangle with side a = 10, angle A = 30°, angle B = 45°</p>
+                                        <p><strong>Step 1:</strong> Use Law of Sines: a/sin(A) = b/sin(B)</p>
+                                        <p><strong>Step 2:</strong> Substitute: 10/sin(30°) = b/sin(45°)</p>
+                                        <p><strong>Step 3:</strong> Calculate: 10/0.5 = b/0.707</p>
+                                        <p><strong>Step 4:</strong> Solve: b = 20 × 0.707 = 14.14</p>
+                                        <p>🎯 <strong>Side b ≈ 14.14 units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="example-box">
+                                    <h4>Law of Cosines: c² = a² + b² - 2ab cos(C)</h4>
+                                    <div class="step-by-step">
+                                        <p><strong>Example:</strong> Triangle with sides a = 3, b = 4, and angle C = 90°</p>
+                                        <p><strong>Step 1:</strong> Use Law of Cosines: c² = a² + b² - 2ab cos(C)</p>
+                                        <p><strong>Step 2:</strong> Substitute: c² = 3² + 4² - 2(3)(4)cos(90°)</p>
+                                        <p><strong>Step 3:</strong> Calculate: c² = 9 + 16 - 24(0) = 25</p>
+                                        <p><strong>Step 4:</strong> Solve: c = √25 = 5</p>
+                                        <p>🎯 <strong>Side c = 5 units</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="trigonometry-learning-controls">
+                                    <button id="startTriangleSolvingExercisesBtn" class="start-exercises-btn">Start Triangle Solving Exercises</button>
+                                    <button id="backToTrigSelectionBtn" class="back-to-selection-btn">← Back to Trigonometry Types</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trigonometry Exercises Section -->
+                <div id="trigonometryExercisesSection" class="exercises-section hidden">
+                    <div class="exercises-header">
+                        <h2>📊 Trigonometry Exercises</h2>
+                        <div class="score-display">
+                            <span>Correct: <span id="trigonometryCorrectCount">0</span></span>
+                            <span>Total: <span id="trigonometryTotalCount">0</span></span>
+                            <span>Score: <span id="trigonometryPercentage">0</span>%</span>
+                        </div>
+                    </div>
+
+                    <div id="trigonometryExerciseContent" class="exercise-content">
+                        <div class="exercise-problem">
+                            <h3>Trigonometry Problem</h3>
+                            <div id="trigonometryProblemDisplay" class="problem-display">
+                                Select an exercise type to begin
+                            </div>
+                        </div>
+
+                        <div class="exercise-input">
+                            <label for="trigonometryAnswerInput">Your Answer:</label>
+                            <input type="text" id="trigonometryAnswerInput" placeholder="Enter your answer" step="0.001">
+                            <button id="checkTrigonometryAnswer" class="check-answer-btn">Check Answer</button>
+                        </div>
+
+                        <div id="trigonometryExerciseFeedback" class="exercise-feedback hidden">
+                            <!-- Feedback will be dynamically generated -->
+                        </div>
+
+                        <div class="exercise-controls">
+                            <button id="trigonometryRandomProblem" class="random-problem-btn">🎲 Random Problem</button>
+                            <button id="trigonometryNewType" class="new-type-btn">Choose New Type</button>
+                            <button id="trigonometryBackLearning" class="back-learning-btn">📊 Back to Learning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-section hidden">
+                    <div class="input-group">
+                        <label for="num1">First Number:</label>
+                        <input type="number" id="num1" placeholder="Enter first number">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="num2">Second Number:</label>
+                        <input type="number" id="num2" placeholder="Enter second number">
+                    </div>
+                    
+                    <div id="operationsContainer" class="operations">
+                        <!-- Operations will be populated based on difficulty -->
+                    </div>
+                    
+                    <div class="result-section">
+                        <h3>Result:</h3>
+                        <div id="result" class="result-display">0</div>
+                    </div>
+                    
+                    <div class="actions">
+                        <button id="clearBtn" class="clear-btn">Clear</button>
+                        <button id="historyBtn" class="history-btn">Show History</button>
+                        <button id="hintBtn" class="hint-btn">💡 Hint</button>
+                    </div>
+                    
+                    <div id="hintSection" class="hint-section hidden">
+                        <p id="hintText"></p>
+                    </div>
+                </div>
+                
+                <div id="history" class="history-section hidden">
+                    <h3>Calculation History</h3>
+                    <ul id="historyList"></ul>
+                    <button id="clearHistoryBtn" class="clear-history-btn">Clear History</button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Knowledge Check Section -->
+        <div id="knowledgeCheckSection" class="learning-section hidden">
+            <button id="knowledgeCheckHomeBtn" class="home-btn hidden">🏠 Home</button>
+            <div class="learning-content">
+                <h2>🧠 Knowledge Check</h2>
+                
+                <div class="knowledge-check-type-selection">
+                    <h3>Choose Exercise Type:</h3>
+                    <div class="exercise-buttons">
+                        <button class="knowledge-check-type-btn" data-type="terminology">Math Terminology</button>
+                        <button class="knowledge-check-type-btn" data-type="fill-in-blank">Fill in the Blanks</button>
+                        <button class="knowledge-check-type-btn" data-type="multiple-choice">Multiple Choice</button>
+                        <button class="knowledge-check-type-btn" data-type="true-false">True or False</button>
+                    </div>
+                </div>
+
+                <!-- Knowledge Check Learning Content (Initially Hidden) -->
+                <div id="knowledgeCheckLearningContent" class="knowledge-check-learning-content hidden">
+                    <div id="terminologyLearning" class="operation-explanation hidden">
+                        <h3>📚 Math Terminology</h3>
+                        <p><strong>What are Mathematical Terms?</strong></p>
+                        <p>Mathematical terminology consists of words and phrases that have specific meanings in mathematics.</p>
+                        
+                        <div class="example-box">
+                            <h4>Basic Number Terms</h4>
+                            <div class="term-examples">
+                                <p><strong>Number:</strong> A mathematical object used to count, measure, and label.</p>
+                                <p><strong>Integer:</strong> Whole numbers including negatives (..., -2, -1, 0, 1, 2, ...).</p>
+                                <p><strong>Even Number:</strong> A number divisible by 2 (2, 4, 6, 8, ...).</p>
+                                <p><strong>Odd Number:</strong> A number not divisible by 2 (1, 3, 5, 7, ...).</p>
+                                <p><strong>Prime Number:</strong> A number greater than 1 with exactly two factors: 1 and itself.</p>
+                            </div>
+                        </div>
+
+                        <div class="example-box">
+                            <h4>Operation Terms</h4>
+                            <div class="term-examples">
+                                <p><strong>Addition (+):</strong> Combining two or more numbers to get their sum.</p>
+                                <p><strong>Subtraction (-):</strong> Taking away one number from another to get the difference.</p>
+                                <p><strong>Multiplication (×):</strong> Repeated addition; finding the product of numbers.</p>
+                                <p><strong>Division (÷):</strong> Splitting a number into equal parts; finding the quotient.</p>
+                                <p><strong>Equation:</strong> A mathematical statement showing two expressions are equal.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fillInBlankLearning" class="operation-explanation hidden">
+                        <h3>📝 Fill in the Blanks</h3>
+                        <p><strong>What are Fill-in-the-Blank Exercises?</strong></p>
+                        <p>These exercises test your understanding by having you complete sentences or mathematical statements.</p>
+                        
+                        <div class="example-box">
+                            <h4>Example Fill-in-the-Blank</h4>
+                            <div class="example-problem">
+                                <p><strong>Problem:</strong> A _____ is a number that has exactly two factors: 1 and itself.</p>
+                                <p><strong>Answer:</strong> Prime number</p>
+                                <p><strong>Explanation:</strong> Prime numbers like 2, 3, 5, 7, 11 have only two factors.</p>
+                            </div>
+                        </div>
+
+                        <div class="example-box">
+                            <h4>Mathematical Statement Examples</h4>
+                            <div class="example-problem">
+                                <p><strong>Problem:</strong> 5 + 3 = _____ </p>
+                                <p><strong>Answer:</strong> 8</p>
+                                <p><strong>Problem:</strong> The result of multiplication is called a _____</p>
+                                <p><strong>Answer:</strong> Product</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="multipleChoiceLearning" class="operation-explanation hidden">
+                        <h3>🎯 Multiple Choice</h3>
+                        <p><strong>What are Multiple Choice Questions?</strong></p>
+                        <p>Questions where you choose the correct answer from several given options.</p>
+                        
+                        <div class="example-box">
+                            <h4>Example Multiple Choice</h4>
+                            <div class="example-problem">
+                                <p><strong>Question:</strong> What is 7 × 8?</p>
+                                <p>A) 54</p>
+                                <p>B) 56</p>
+                                <p>C) 58</p>
+                                <p>D) 60</p>
+                                <p><strong>Answer:</strong> B) 56</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="trueFalseLearning" class="operation-explanation hidden">
+                        <h3>✓✗ True or False</h3>
+                        <p><strong>What are True/False Questions?</strong></p>
+                        <p>Statements that you must identify as either true or false based on mathematical facts.</p>
+                        
+                        <div class="example-box">
+                            <h4>Example True/False</h4>
+                            <div class="example-problem">
+                                <p><strong>Statement:</strong> All even numbers are divisible by 2.</p>
+                                <p><strong>Answer:</strong> True</p>
+                                <p><strong>Explanation:</strong> By definition, even numbers are those divisible by 2.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="startKnowledgeCheckExercisesBtn" class="start-exercises-btn">Start Knowledge Check Exercises</button>
+                        <button id="backToKnowledgeCheckSelectionBtn" class="back-selection-btn hidden">Back to Exercise Types</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Knowledge Check Exercises Section -->
+        <div id="knowledgeCheckExercisesSection" class="exercises-section hidden">
+            <button id="knowledgeCheckExerciseHomeBtn" class="home-btn">🏠 Home</button>
+            <div class="exercises-content">
+                <h2>🧠 Knowledge Check Exercises</h2>
+                
+                <div class="score-display">
+                    <span>Score: <span id="knowledgeCheckScoreDisplay">0/0</span></span>
+                    <span>Streak: <span id="knowledgeCheckStreakDisplay">0</span> 🔥</span>
+                </div>
+            </div>
+
+            <!-- Exercise Type Selection -->
+            <div class="knowledge-check-exercise-type-selection">
+                <h3>Choose Exercise Type:</h3>
+                <div class="exercise-buttons">
+                    <button class="knowledge-check-exercise-type-btn" data-type="terminology">Math Terminology</button>
+                    <button class="knowledge-check-exercise-type-btn" data-type="fill-in-blank">Fill in the Blanks</button>
+                    <button class="knowledge-check-exercise-type-btn" data-type="multiple-choice">Multiple Choice</button>
+                    <button class="knowledge-check-exercise-type-btn" data-type="true-false">True or False</button>
+                </div>
+            </div>
+
+            <div id="knowledgeCheckExerciseContent" class="exercise-content hidden">
+                <div class="exercise-problem">
+                    <h3 id="knowledgeCheckExerciseTitle">Knowledge Check Exercise</h3>
+                    <div id="knowledgeCheckProblemDisplay" class="problem-display"></div>
+                </div>
+
+                <div class="exercise-input">
+                    <label for="knowledgeCheckExerciseAnswer">Your Answer:</label>
+                    <input type="text" id="knowledgeCheckExerciseAnswer" placeholder="Enter your answer" step="0.01">
+                    <button id="knowledgeCheckCheckAnswerBtn" class="check-answer-btn">Check Answer</button>
+                </div>
+
+                <div id="knowledgeCheckExerciseFeedback" class="exercise-feedback hidden">
+                    <div id="knowledgeCheckFeedbackMessage"></div>
+                    <button id="knowledgeCheckNextProblemBtn" class="next-problem-btn">Next Problem</button>
+                </div>
+
+                <div class="exercise-controls">
+                    <button id="knowledgeCheckNewExerciseTypeBtn" class="new-type-btn">Choose New Type</button>
+                    <button id="knowledgeCheckBackToLearningBtn" class="back-learning-btn">🧠 Back to Knowledge Check Learning</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dictionary Section -->
+        <div id="dictionarySection" class="learning-section hidden">
+            <div class="learning-content">
+                <h2>📖 Math Dictionary</h2>
+                <p>Comprehensive glossary of mathematical terms used throughout the app</p>
+                
+                <div class="dictionary-search">
+                    <input type="text" id="dictionarySearch" placeholder="Search for a term..." class="search-input">
+                </div>
+                
+                <div class="dictionary-categories">
+                    <button class="category-btn active" data-category="all">All Terms</button>
+                    <button class="category-btn" data-category="basic">Basic Math</button>
+                    <button class="category-btn" data-category="geometry">Geometry</button>
+                    <button class="category-btn" data-category="algebra">Algebra</button>
+                    <button class="category-btn" data-category="trigonometry">Trigonometry</button>
+                </div>
+                
+                <div id="dictionaryContent" class="dictionary-content">
+                    <!-- Basic Math Terms - Alphabetically Ordered -->
+                    <div class="term-group" data-category="basic">
+                        <div class="alphabetical-indicator">Basic Math Terms</div>
+                        
+                        <div class="term-item">
+                            <h4>Addition (+)</h4>
+                            <p>The mathematical operation of combining two or more numbers to find their total sum.</p>
+                            <div class="term-example">Example: 5 + 3 = 8</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Division (÷)</h4>
+                            <p>The mathematical operation of splitting a number into equal parts or finding how many times one number goes into another.</p>
+                            <div class="term-example">Example: 12 ÷ 3 = 4</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Multiplication (×)</h4>
+                            <p>The mathematical operation of repeated addition, or finding the product of two or more numbers.</p>
+                            <div class="term-example">Example: 4 × 3 = 12</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Percentage (%)</h4>
+                            <p>A way of expressing a number as a fraction of 100. Used to compare proportions and ratios.</p>
+                            <div class="term-example">Example: 25% = 25/100 = 0.25</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Power/Exponent</h4>
+                            <p>Repeated multiplication of a number by itself. The small number (exponent) tells how many times to multiply the base number.</p>
+                            <div class="term-example">Example: 2³ = 2 × 2 × 2 = 8</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Square Root (√)</h4>
+                            <p>A number that when multiplied by itself gives the original number.</p>
+                            <div class="term-example">Example: √16 = 4 because 4 × 4 = 16</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Subtraction (-)</h4>
+                            <p>The mathematical operation of finding the difference between two numbers by taking one away from the other.</p>
+                            <div class="term-example">Example: 8 - 3 = 5</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Geometry Terms - Alphabetically Ordered -->
+                    <div class="term-group" data-category="geometry">
+                        <div class="alphabetical-indicator">Geometry Terms</div>
+                        
+                        <div class="term-item">
+                            <h4>Area</h4>
+                            <p>The amount of space inside a 2D shape, measured in square units.</p>
+                            <div class="term-example">Example: Rectangle area = length × width</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Circle</h4>
+                            <p>A round shape where all points are the same distance from the center.</p>
+                            <div class="term-example">Properties: Area = π × radius², Circumference = 2π × radius</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Cone</h4>
+                            <p>A 3D shape with a circular base that tapers to a point.</p>
+                            <div class="term-example">Properties: Volume = (1/3)π × radius² × height</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Cube</h4>
+                            <p>A 3D shape with 6 square faces, all edges equal length.</p>
+                            <div class="term-example">Properties: Volume = side³, Surface area = 6 × side²</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Cylinder</h4>
+                            <p>A 3D shape with two circular ends and a curved surface.</p>
+                            <div class="term-example">Properties: Volume = π × radius² × height</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Perimeter</h4>
+                            <p>The total distance around the outside of a 2D shape.</p>
+                            <div class="term-example">Example: Square perimeter = 4 × side length</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Rectangle</h4>
+                            <p>A 4-sided shape with opposite sides equal and all angles being 90 degrees.</p>
+                            <div class="term-example">Properties: Area = length × width</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Rectangular Prism</h4>
+                            <p>A 3D shape with 6 rectangular faces.</p>
+                            <div class="term-example">Properties: Volume = length × width × height</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Sphere</h4>
+                            <p>A perfectly round 3D shape, like a ball.</p>
+                            <div class="term-example">Properties: Volume = (4/3)π × radius³</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Surface Area</h4>
+                            <p>The total area of all faces of a 3D shape.</p>
+                            <div class="term-example">Example: Cube surface area = 6 × side²</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Triangle</h4>
+                            <p>A 3-sided polygon. The sum of all angles equals 180 degrees.</p>
+                            <div class="term-example">Properties: Area = ½ × base × height</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Volume</h4>
+                            <p>The amount of space inside a 3D shape, measured in cubic units.</p>
+                            <div class="term-example">Example: Cube volume = side³</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Algebra Terms - Alphabetically Ordered -->
+                    <div class="term-group" data-category="algebra">
+                        <div class="alphabetical-indicator">Algebra Terms</div>
+                        
+                        <div class="term-item">
+                            <h4>Coefficient</h4>
+                            <p>The number that multiplies a variable in an algebraic expression.</p>
+                            <div class="term-example">Example: In 5x, the coefficient is 5</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Equation</h4>
+                            <p>A mathematical statement that shows two expressions are equal, connected by an equals sign.</p>
+                            <div class="term-example">Example: 2x + 3 = 7</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Linear Equation</h4>
+                            <p>An equation that makes a straight line when graphed. The variable has no exponent or the exponent is 1.</p>
+                            <div class="term-example">Example: y = 2x + 3</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Polynomial</h4>
+                            <p>An expression with multiple terms that can include variables, coefficients, and exponents.</p>
+                            <div class="term-example">Example: 3x² + 2x - 5</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Quadratic Equation</h4>
+                            <p>An equation where the highest power of the variable is 2. Forms a parabola when graphed.</p>
+                            <div class="term-example">Example: ax² + bx + c = 0</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>System of Equations</h4>
+                            <p>A set of two or more equations with the same variables that are solved together.</p>
+                            <div class="term-example">Example: x + y = 5 and 2x - y = 1</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Variable</h4>
+                            <p>A letter (like x or y) that represents an unknown number in an equation.</p>
+                            <div class="term-example">Example: In 2x + 3 = 7, 'x' is the variable</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Trigonometry Terms - Alphabetically Ordered -->
+                    <div class="term-group" data-category="trigonometry">
+                        <div class="alphabetical-indicator">Trigonometry Terms</div>
+                        
+                        <div class="term-item">
+                            <h4>Adjacent Side</h4>
+                            <p>In a right triangle, the side next to a given angle (not the hypotenuse).</p>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Angle</h4>
+                            <p>The amount of rotation between two lines that meet at a point, measured in degrees or radians.</p>
+                            <div class="term-example">A full circle = 360 degrees</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Cosine (cos)</h4>
+                            <p>In a right triangle, the ratio of the adjacent side to the hypotenuse.</p>
+                            <div class="term-example">cos(θ) = adjacent/hypotenuse</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Hypotenuse</h4>
+                            <p>The longest side of a right triangle, opposite the 90-degree angle.</p>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Inverse Trigonometric Functions</h4>
+                            <p>Functions that find the angle when given the ratio. Written as sin⁻¹, cos⁻¹, or tan⁻¹ (also arcsin, arccos, arctan).</p>
+                            <div class="term-example">If sin(30°) = 0.5, then sin⁻¹(0.5) = 30°</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Opposite Side</h4>
+                            <p>In a right triangle, the side across from a given angle.</p>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Right Triangle</h4>
+                            <p>A triangle with one 90-degree angle. The longest side is called the hypotenuse.</p>
+                            <div class="term-example">Used in all basic trigonometry calculations</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Sine (sin)</h4>
+                            <p>In a right triangle, the ratio of the opposite side to the hypotenuse.</p>
+                            <div class="term-example">sin(θ) = opposite/hypotenuse</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>SOH-CAH-TOA</h4>
+                            <p>A memory device for remembering the trigonometric ratios: Sin = Opposite/Hypotenuse, Cos = Adjacent/Hypotenuse, Tan = Opposite/Adjacent.</p>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Tangent (tan)</h4>
+                            <p>In a right triangle, the ratio of the opposite side to the adjacent side.</p>
+                            <div class="term-example">tan(θ) = opposite/adjacent</div>
+                        </div>
+                        
+                        <div class="term-item">
+                            <h4>Trigonometric Identity</h4>
+                            <p>An equation involving trigonometric functions that is true for all values where both sides are defined.</p>
+                            <div class="term-example">sin²(θ) + cos²(θ) = 1</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dictionary-actions">
+                    <button id="backToHome" class="back-btn">← Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <footer id="appFooter" class="app-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section logo-section">
+                    <div class="footer-logo">
+                        <h3 class="logo-text">Math Wizard</h3>
+                        <div class="logo-icon">🧙‍♂️📊</div>
+                    </div>
+                </div>
+                <div class="footer-section links-section">
+                    <ul class="footer-links">
+                        <li class="footer-link-item">
+                            <a href="#" id="footerAboutBtn" class="footer-link">About</a>
+                        </li>
+                        <li class="footer-link-item">
+                            <a href="#" id="footerContactBtn" class="footer-link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Math Wizard. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/algebra.js"></script>
+    <script src="../js/trigonometry.js"></script>
+    <script src="../js/knowledge-check.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
