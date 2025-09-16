@@ -1,0 +1,41 @@
+{
+  "name": "math-wizard",
+  "version": "1.0.0",
+  "description": "Interactive Math Learning Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "dist": "npm run build"
+  },
+  "keywords": ["math", "learning", "education", "electron"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.mathwizard.app",
+    "productName": "Math Wizard",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "html/**/*",
+      "css/**/*",
+      "js/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
