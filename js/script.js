@@ -741,6 +741,11 @@ class MathCalculator {
         this.geometricLearningSection?.classList.add('hidden');
         this.geometricExercisesSection?.classList.add('hidden');
         document.querySelector('.calculator-section')?.classList.add('hidden');
+        
+        // Show operation explanations for beginner level
+        this.learningSection?.querySelectorAll('.operation-explanation').forEach(el => {
+            el.classList.remove('hidden');
+        });
     }
 
     showIntermediateLearningSection() {
@@ -753,6 +758,11 @@ class MathCalculator {
         this.geometricLearningSection?.classList.add('hidden');
         this.geometricExercisesSection?.classList.add('hidden');
         document.querySelector('.calculator-section')?.classList.add('hidden');
+        
+        // Show operation explanations for intermediate level
+        this.intermediateLearningSection?.querySelectorAll('.operation-explanation').forEach(el => {
+            el.classList.remove('hidden');
+        });
     }
 
     showAdvancedLearningSection() {
@@ -765,6 +775,11 @@ class MathCalculator {
         this.geometricLearningSection?.classList.add('hidden');
         this.geometricExercisesSection?.classList.add('hidden');
         document.querySelector('.calculator-section')?.classList.add('hidden');
+        
+        // Show operation explanations for advanced level
+        this.advancedLearningSection?.querySelectorAll('.operation-explanation').forEach(el => {
+            el.classList.remove('hidden');
+        });
     }
 
     showGeometricLearningSection() {
@@ -779,6 +794,11 @@ class MathCalculator {
         this.advancedGeometricLearningSection?.classList.add('hidden');
         this.advancedGeometricExercisesSection?.classList.add('hidden');
         document.querySelector('.calculator-section')?.classList.add('hidden');
+        
+        // Show operation explanations for geometric level
+        this.geometricLearningSection?.querySelectorAll('.operation-explanation').forEach(el => {
+            el.classList.remove('hidden');
+        });
     }
 
     showAdvancedGeometricLearningSection() {
@@ -793,6 +813,11 @@ class MathCalculator {
         this.advancedGeometricLearningSection?.classList.remove('hidden');
         this.advancedGeometricExercisesSection?.classList.add('hidden');
         document.querySelector('.calculator-section')?.classList.add('hidden');
+        
+        // Show operation explanations for advanced geometric level
+        this.advancedGeometricLearningSection?.querySelectorAll('.operation-explanation').forEach(el => {
+            el.classList.remove('hidden');
+        });
         
         // Reset the advanced geometric learning section state
         this.showAdvancedGeometricSelection();
@@ -814,6 +839,11 @@ class MathCalculator {
         this.trigonometryLearningSection?.classList.add('hidden');
         this.trigonometryExercisesSection?.classList.add('hidden');
         document.querySelector('.calculator-section')?.classList.add('hidden');
+        
+        // Show operation explanations for algebra level
+        this.algebraLearningSection?.querySelectorAll('.operation-explanation').forEach(el => {
+            el.classList.remove('hidden');
+        });
     }
 
     showTrigonometryLearningSection() {
@@ -832,6 +862,11 @@ class MathCalculator {
         this.trigonometryLearningSection?.classList.remove('hidden');
         this.trigonometryExercisesSection?.classList.add('hidden');
         document.querySelector('.calculator-section')?.classList.add('hidden');
+        
+        // Show operation explanations for trigonometry level
+        this.trigonometryLearningSection?.querySelectorAll('.operation-explanation').forEach(el => {
+            el.classList.remove('hidden');
+        });
     }
 
     showExercisesSection() {
